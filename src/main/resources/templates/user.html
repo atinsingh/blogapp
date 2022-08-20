@@ -7,11 +7,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Form</h1>
-<form action="#" th:action="@{/user}" th:object="${user}" method="post">
-    <p>Id: <input type="text" th:field="*{firstName}" /></p>
-    <p>Message: <input type="text" th:field="*{lastName}" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h1>Form</h1>
+            <form action="#" th:action="@{/user}" th:object="${user}" method="post">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" th:field="*{firstName}" id="firstName" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" th:field="*{lastName}" id="lastName" aria-describedby="lastNameHelp" placeholder="Enter email">
+                    <small id="lastNameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-4 p-12 mt-4 text-white">
+            <div class="row bg-primary">
+                <h1>Sign Up for Creating Bogs</h1>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

@@ -35,12 +35,18 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 <tr th:each="user :${users}">
-                    <th th:text="${user.id}" scope="row">1</th>
-                    <td th:text="${user.firstName}">Mark</td>
-                    <td th:text="${user.lastName}">Otto</td>
-                    <td th:text="${user.createDate}">@mdo</td>
-                </tr>
+
+                        <th th:text="${user.id}" scope="row">1</th>
+                        <td>
+                            <a th:text="${user.firstName}" th:href="@{'/user/'+${user.id}}">  </a>
+                        </td>
+                        <td th:text="${user.lastName}">Otto</td>
+                        <td th:text="${user.createDate}">@mdo</td>
+
+                    </tr>
+
                 </tbody>
             </table>
         </div>
